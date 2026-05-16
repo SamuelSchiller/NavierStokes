@@ -14,10 +14,7 @@ void runLoop() {
 
   int ocean_height = initial_value;
 
-  Particle particle{
-      .position = {10.0f, 0.0f}, // Vec2 with x, y
-      .velocity = {0.0f, 0.0f},  // Vec2 with x, y
-  };
+  Particle particle({10.0f, 0.0f},{0.0f, 0.0f});
 
   while (true) {
 

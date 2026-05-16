@@ -2,19 +2,43 @@
 
 #include "Vec2.hpp"
 
-struct Particle {
+class Particle {
 
-    Vec2 position;
-    Vec2 velocity;
-    float mass = 1;
-    
+  public:
+  // Terminal Dimensions
+  inline static int screenWidth = 0;
+  inline static int screenHeight = 0;
+  // Simulation Dimensions
+  inline static Vec2 simulationDimension;
+  // Return cell hash for given coords
+  static int getCellHash(Vec2 coords);
+  
+
+  Particle() = default;
+
+  Particle(Vec2 startPosition, Vec2 startVelocity, float startMass = 1.0f) {
+    position = startPosition;
+    velocity = startVelocity;
+    mass = startMass;
+  }
+
+
+  public:
+  Vec2 position;
+  Vec2 velocity;
+  float mass = 1.0f;
+  int cellHash = -1;
+
+  public:
+
+  void tick();
+
+  void updateCellHash();
+
+  void applyForce(Vec2 force);
+
+  void applyVelocity();
+
+
 };
-
-void applyVelocity(Particle& particle); 
-
-void applyVelocity(Particle& particle, Vec2 velocity); 
-
-void applyForce(Particle& particle, Vec2 force);
-
-void update(Particle& particle);
 
