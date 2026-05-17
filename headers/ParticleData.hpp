@@ -5,9 +5,9 @@
 #include <vector>
 
 class ParticleData {
-  vector<Particle>;
+  vector<Particle> particles;
   Vec2 simulationDimension;
-  
+
   // [TODO] Needs a way to look up collections of particles via cell coords
  
   // Fetch the particles in a given cell

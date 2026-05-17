@@ -12,7 +12,6 @@ class Particle {
   inline static Vec2 simulationDimension;
   // Return cell hash for given coords
   static int getCellHash(Vec2 coords);
-  
 
   Particle() = default;
 
